@@ -326,12 +326,22 @@
 
         .logo {
             position: fixed;
-            top: 24px;
+            top: 28px;
             left: 32px;
             z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo img { height: 28px; width: auto; }
+        .logo svg { height: 32px; width: auto; }
+        .logo .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e8ecf4;
+            letter-spacing: 0.5px;
+        }
+        .logo .logo-text span { color: #3b82f6; }
 
         .slide-compact .module-title { font-size: 19px !important; margin-bottom: 8px !important; }
         .slide-compact .module-desc { font-size: 14px !important; }
@@ -427,7 +437,13 @@
 </head>
 
 <body tabindex="0" autofocus onclick="this.focus()">
-    <div class="logo"><img src="2025-08-30 16.43.56.jpg" alt="ChangesWithAI"></div>
+    <div class="logo">
+        <svg viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 20L16 8L20 12L8 24L4 20Z" fill="#3b82f6"/>
+            <path d="M4 24L16 12L20 16L8 28L4 24Z" fill="#1e293b" stroke="#3b82f6" stroke-width="0.5"/>
+        </svg>
+        <div class="logo-text">ChangesWith<span>AI</span></div>
+    </div>
     <div class="slide-counter"><span id="current">1</span> / <span id="total">9</span></div>
     <div class="key-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> или свайп</div>
 
