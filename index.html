@@ -433,6 +433,222 @@
         .about-name { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
         .about-role { font-size: 16px; color: var(--accent-light); font-weight: 600; margin-bottom: 16px; }
         .about-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto;
+                height: auto;
+            }
+
+            .slides {
+                height: auto;
+                width: 100%;
+                position: relative;
+            }
+
+            .slide {
+                position: relative;
+                top: auto; left: auto;
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                min-height: 100dvh;
+                padding: 80px 20px 80px;
+                opacity: 0;
+                transform: none;
+                pointer-events: none;
+                display: none;
+                align-items: flex-start;
+            }
+
+            .slide.active {
+                display: flex;
+                opacity: 1;
+                transform: none;
+                pointer-events: all;
+            }
+
+            .slide.prev { transform: none; }
+
+            .slide-content { max-width: 100%; }
+
+            /* Logo */
+            .logo { top: 16px; left: 16px; }
+            .logo svg { height: 24px; }
+            .logo .logo-text { font-size: 14px; }
+
+            /* Counter & nav */
+            .slide-counter { top: 18px; right: 16px; font-size: 12px; }
+            .nav { bottom: 16px; padding: 6px 12px; gap: 6px; }
+            .nav-dot { width: 8px; height: 8px; }
+            .nav-dot.active { width: 24px; }
+            .key-hint { display: none; }
+
+            /* Typography */
+            h1 { font-size: 28px; letter-spacing: -1px; }
+            h2 { font-size: 24px; letter-spacing: -0.5px; margin-bottom: 16px; }
+            h3 { font-size: 18px; margin-bottom: 12px; }
+
+            .subtitle { font-size: 15px; margin-top: 14px; line-height: 1.5; }
+            .subtitle br { display: none; }
+            .label { font-size: 11px; letter-spacing: 1.5px; margin-bottom: 10px; }
+
+            /* Grids → single column */
+            .slide-split {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cards-grid,
+            .vacancy-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .stat-grid.four {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            /* Stat cards */
+            .stat-card { padding: 16px; }
+            .stat-value { font-size: 32px; letter-spacing: -1px; }
+            .stat-label { font-size: 12px; }
+
+            /* Module cards (slide 5) */
+            .slide-compact .module-card { padding: 16px !important; }
+            .slide-compact .module-title { font-size: 16px !important; }
+            .slide-compact .module-desc { font-size: 13px !important; }
+            .slide-compact .module-result { font-size: 12px !important; padding: 8px 10px !important; }
+
+            /* Slide 5 solutions grid → single column */
+            .slide[data-slide="4"] .slide-content > div[style*="grid-template-columns"] {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+
+            /* Cards */
+            .card { padding: 16px; border-radius: 12px; }
+            .module-card { padding: 16px; border-radius: 12px; }
+            .module-title { font-size: 17px; }
+            .module-desc { font-size: 13px; }
+
+            /* About slide */
+            .about-photo { width: 140px; height: 140px; border-radius: 14px; }
+            .about-name { font-size: 24px; }
+            .about-desc { font-size: 14px; }
+            .about-card { padding: 20px; }
+
+            /* Portfolio */
+            .portfolio-icon { width: 36px; height: 36px; font-size: 18px; border-radius: 8px; }
+            .portfolio-text h4 { font-size: 15px; }
+            .portfolio-text p { font-size: 13px; }
+            .portfolio-item { gap: 12px; padding: 14px 0; }
+
+            /* Timeline → vertical stack */
+            .timeline {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .timeline::before {
+                top: 28px;
+                bottom: 28px;
+                left: 14px;
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+
+            .timeline-item {
+                text-align: left;
+                padding-left: 44px;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 0;
+                width: 16px; height: 16px;
+            }
+
+            .timeline-phase { font-size: 11px; }
+            .timeline-title { font-size: 15px; margin-top: 4px; }
+            .timeline-weeks { font-size: 13px; }
+            .timeline-details { font-size: 12px; margin-top: 8px; }
+
+            /* CTA slide */
+            .cta-box { padding: 20px; border-radius: 14px; }
+            .cta-box h3 { font-size: 20px; }
+            .cta-box p { font-size: 14px; }
+
+            .contact-row { flex-direction: column; gap: 12px; }
+            .contact-item { font-size: 14px; }
+
+            /* Vacancy cards */
+            .vacancy-card { padding: 14px; }
+            .vacancy-card .vacancy-title { font-size: 14px; }
+            .vacancy-card .vacancy-desc { font-size: 12px; }
+            .vacancy-card .vacancy-arrow { bottom: 14px; right: 14px; font-size: 16px; }
+
+            /* VS divider */
+            .vs-divider { margin: 16px 0; }
+            .vs-divider .vs-text { font-size: 12px; padding: 4px 14px; }
+
+            .solution-card { padding: 14px; }
+            .solution-card h4 { font-size: 15px; }
+            .solution-card p { font-size: 13px; }
+
+            /* Hero icon */
+            .hero-icon { display: none; }
+
+            /* CTA buttons */
+            .slide[data-slide="8"] div[style*="display:flex"][style*="gap:16px"] {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Slide 6 cards grid */
+            .slide[data-slide="5"] .slide-content > div[style*="grid-template-columns"] {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+
+            /* Slide 8 stat grid */
+            .slide[data-slide="8"] .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Inline style overrides for slide 1 stat-grid margin */
+            .slide[data-slide="0"] .stat-grid { margin-top: 24px !important; }
+
+            /* Inline style overrides for slide 7 stat grid */
+            .slide[data-slide="7"] .stat-grid.four { margin-top: 20px !important; }
+
+            /* Bottom card on slide 7 */
+            .slide[data-slide="7"] .card { padding: 20px 16px; }
+        }
+
+        /* Small phones */
+        @media (max-width: 380px) {
+            .slide { padding: 70px 14px 70px; }
+            h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+            .stat-grid.four { grid-template-columns: 1fr; }
+            .stat-value { font-size: 28px; }
+            .about-photo { width: 110px; height: 110px; }
+        }
     </style>
 </head>
 
